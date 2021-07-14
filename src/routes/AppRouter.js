@@ -1,12 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from '../containers/Login';
-import App from '../containers/Home';
+import Home from '../containers/Home';
+import Register from '../containers/Register';
+import NotFound from '../containers/NotFound';
+import Layout from '../components/Layout';
 
 const AppRouter = () => (
   <BrowserRouter>
-    <Route exact path='/' component={App} />
-    <Route exact path='/login' component={Login} />
+    <Layout>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/register' component={Register} />
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
+
   </BrowserRouter>
 );
 
