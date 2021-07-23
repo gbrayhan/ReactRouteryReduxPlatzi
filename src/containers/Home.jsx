@@ -18,13 +18,18 @@ const Home = ({
       {mylist.length > 0 && (
         <Categories title='Mi Lista'>
           <Carousel>
-            {mylist.map(item => <CarouselItem key={item.id} {...item} />)}
+            {mylist.map(item => <CarouselItem isList key={item.id} {...item} />)}
           </Carousel>
         </Categories>
       )}
       <Categories title='Tendencias'>
         <Carousel>
-          {trends.map(item => <CarouselItem key={item.id} {...item} />)}
+          {trends.map(item => (
+            <CarouselItem
+              key={item.id}
+              {...item}
+            />
+          ))}
         </Carousel>
       </Categories>
       <Categories title='Originales de Platzi Video'>

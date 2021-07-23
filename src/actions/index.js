@@ -1,7 +1,16 @@
-import { SET_FAVORITE } from '../types/favorites';
+import { DELETE_FAVORITE, SET_FAVORITE, LOGIN_REQUEST } from '../types/favorites';
 
-// eslint-disable-next-line import/prefer-default-export
 export const setFavorite = payload => ({
   type: SET_FAVORITE,
+  payload,
+});
+
+export const deleteFavorite = payload => ({
+  type: DELETE_FAVORITE,
+  payload,
+});
+
+export const loginRequest = payload => ({
+  type: LOGIN_REQUEST,
   payload,
 });
