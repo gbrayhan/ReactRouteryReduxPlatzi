@@ -1,4 +1,4 @@
-import { DELETE_FAVORITE, LOGIN_REQUEST, SET_FAVORITE } from '../types/favorites';
+import { DELETE_FAVORITE, LOGIN_REQUEST, LOGOUT_REQUEST, SET_FAVORITE } from '../types/favorites';
 
 const reducer = (state, action) => {
 
@@ -19,6 +19,8 @@ const reducer = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case LOGOUT_REQUEST:
+      return { ...state, user: {} };
 
     default:
       return state;
