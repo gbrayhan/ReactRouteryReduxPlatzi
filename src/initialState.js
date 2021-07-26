@@ -3,6 +3,7 @@ export const initialState = {
   'user': {
     'email': '',
   },
+  'playing': null,
   'mylist': [],
   'trends': [
     {
@@ -42,7 +43,7 @@ export const initialState = {
       'duration': 163,
       'cover': 'http://dummyimage.com/800x600.png/5472FF/ffffff',
       'description': 'Vestibulum ac est lacinia nisi venenatis tristique',
-      'source': 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
+      'source': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     },
     {
       'id': 5,

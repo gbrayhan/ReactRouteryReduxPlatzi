@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Search from '../components/Search';
-
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
@@ -39,6 +39,12 @@ const Home = ({
       </Categories>
     </>
   );
+};
+
+Home.propTypes = {
+  mylist: PropTypes.array.isRequired,
+  trends: PropTypes.array.isRequired,
+  originals: PropTypes.array.isRequired,
 };
 
 const mapDispatchToProps = {};

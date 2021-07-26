@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import '../assets/styles/components/Register.scss';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { registerRequest } from '../actions';
 
 const Register = (props) => {
   const [registerData, setRegisterData] = useState({
@@ -16,7 +19,8 @@ const Register = (props) => {
   };
 
   const handleSubmit = () => {
-    console.log(registerData);
+    props.registerRequest(registerData);
+    props.history.push('/');
   };
 
   return (
@@ -35,4 +39,17 @@ const Register = (props) => {
   );
 };
 
-export default Register;
+Register.propTypes = {
+  registerRequest: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
+};
+
+const mapDispatchToProps = {
+  registerRequest,
+};
+const mapStateToProps = (state) => {
+  return {
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

@@ -27,10 +27,10 @@ const Header = (props) => {
         </div>
         <ul>
           <li><a href='/'>Cuenta</a></li>
-          <li><Link to='/login'>Iniciar Sesión</Link></li>
-          <li>
-            <a href='##' onClick={handleLogout}>Close Session</a>
-          </li>
+          { user.email === '' | user.email === undefined ?
+            <li><Link to='/login'>Iniciar Sesión</Link></li> :
+            <li><a href='##' onClick={handleLogout}>Close Session</a></li>
+          }
         </ul>
       </div>
     </header>

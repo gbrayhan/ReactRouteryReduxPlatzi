@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import '../assets/styles/components/Login.scss';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 import { loginRequest } from '../actions';
 
 const Login = (props) => {
-
   const [form, setForm] = useState({});
 
   const handleOnChange = (event) => {
@@ -54,6 +54,10 @@ const Login = (props) => {
       </section>
     </section>
   );
+};
+Login.propTypes = {
+  loginRequest: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 const mapDispatchToProps = {
